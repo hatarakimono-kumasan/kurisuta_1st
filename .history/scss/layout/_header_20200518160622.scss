@@ -104,49 +104,50 @@ humberger-menu
 	width: 10rem;
 	height: 6rem;
 	line-height: 6rem;
-}
-@include pc {
-	.header {
-		// width: 100%;
-		padding: 0 120px;
 
-		h1 {
-			@include tracking(0);
-			line-height: calc(30 / 26);
-			width: 20%;
-		}
-		.nav-wrapper {
-			width: 100%;
-			height: 72px;
-			display: block;
-			z-index: inherit;
-			position: inherit;
+	@include pc {
+		.header {
+			// width: 100%;
+			padding: 0 120px;
 
-			.header-nav {
+			h1 {
+				@include tracking(0);
+				line-height: calc(30 / 26);
+				width: 20%;
+			}
+			.nav-wrapper {
+				width: 100%;
+				height: 72px;
+				display: block;
 				z-index: inherit;
+				position: inherit;
 
-				.nav-list {
-					position: inherit;
-					text-align: inherit;
-					transform: inherit;
-					display: flex;
-					justify-content: flex-end;
-					line-height: 74px;
+				.header-nav {
+					z-index: inherit;
 
-					.nav-contact_item {
-						margin-right: 5rem;
-						text-align: center;
+					.nav-list {
+						position: inherit;
+						text-align: inherit;
+						transform: inherit;
+						display: flex;
+						justify-content: flex-end;
+						line-height: 74px;
 
-						&:nth-child(4) {
-							margin-right: 0;
+						.nav-contact_item {
+							margin-right: 5rem;
+							text-align: center;
+
+							&:nth-child(4) {
+								margin-right: 0;
+							}
 						}
 					}
 				}
 			}
-		}
-		.burger-btn {
-			z-index: inherit;
-			display: none;
+			.burger-btn {
+				z-index: inherit;
+				display: none;
+			}
 		}
 	}
 }

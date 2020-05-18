@@ -423,6 +423,14 @@ humberger-menu
   overflow: hidden;
 }
 
+/*header-navの中身
+----------------------------------------------------------------------*/
+.nav-contact_item {
+  width: 10rem;
+  height: 6rem;
+  line-height: 6rem;
+}
+
 @media screen and (min-width: 1200px) {
   .header {
     padding: 0 120px;
@@ -750,16 +758,9 @@ footer small {
   padding: 5rem;
 }
 
-/* ======================================
-Object
-====================================== */
-/**
-Component
------------------------------------ */
-/**
-Project
------------------------------------ */
-/**
-Utility
------------------------------------ */
+.back {
+  color: #333;
+  text-align: center;
+  display: block;
+}
 /*# sourceMappingURL=style.css.map */
