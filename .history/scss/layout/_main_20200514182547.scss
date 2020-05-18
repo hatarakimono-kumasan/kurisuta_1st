@@ -1,0 +1,24 @@
+/*=======================================
+first view
+=========================================*/
+.first_view {
+	width: 100%;
+	position: relative;
+
+	img {
+		min-width: 100%;
+	}
+	h1 {
+		w300px
+		border: #fff 2px solid;
+		color: #fff;
+		position: absolute;
+		transform: translateY(-50%);
+		// font: #fff 30px Roboto bold;
+		font: bold 30px Roboto;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+	}
+}

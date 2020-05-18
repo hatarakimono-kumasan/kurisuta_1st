@@ -1,0 +1,31 @@
+/*
+  Base
+---------------------------------------------- */
+html {
+	box-sizing: border-box;
+	height: 100%;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+body {
+	height: 100%;
+	font-feature-settings: "palt";
+	color: #0d0d0d;
+	background-color: #fafafa;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+a {
+	color: inherit;
+}
+input,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+}

@@ -1,0 +1,38 @@
+/* ======================================
+Foundation
+====================================== */
+
+//@import "scss/foundation/settings";
+@import "scss/foundation/mixin";
+@import "scss/foundation/reset";
+@import "scss/foundation/base";
+
+/* ======================================
+Layout
+====================================== */
+
+@import "scss/layout/header";
+// @import 'layout/nav';
+@import "scss/layout/main";
+// @import 'layout/footer';
+
+/* ======================================
+Object
+====================================== */
+
+/**
+Component
+----------------------------------- */
+
+// @import 'object/component/';
+
+/**
+Project
+----------------------------------- */
+
+// @import 'object/project/';
+
+/**
+Utility
+----------------------------------- */
+// @import 'object/utility/';

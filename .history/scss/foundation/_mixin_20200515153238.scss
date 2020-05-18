@@ -1,0 +1,40 @@
+/*============================================================================== 
+mixin (pc to mobile)
+===============================================================================*/
+
+$sp: 767px;
+$tab: 1023px;
+$lap: 1199px;
+
+@mixin sp {
+	@media screen and (max-width: ($sp)) {
+		@content;
+	}
+}
+
+@mixin tab {
+	@media screen and (max-width: ($tab)) {
+		@content;
+	}
+}
+
+@mixin lap {
+	@media screen and (max-width: ($lap)) {
+		@content;
+	}
+}
+
+//使用法
+//@include tab{}で呼び出す
+
+/*============================================================================== 
+トラッキング(letter-spacing)のmixin
+==============================================================================*/
+@mixin tracking($tracking) {
+	letter-spacing: ($tracking / 1000) + em;
+}
+
+// 使用法
+//   p {
+//    @include tracking(16);
+//   }

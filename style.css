@@ -1,0 +1,765 @@
+@charset "UTF-8";
+/* ======================================
+Foundation
+====================================== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap");
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  background-color: #ff9;
+  color: #333;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #333;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+/*============================================================================== 
+mixin (mobile to pc)
+===============================================================================*/
+/*============================================================================== 
+トラッキング(letter-spacing)のmixin
+==============================================================================*/
+/*
+font
+------------------------------------------*/
+body {
+  font-family: Roboto, "Noto Sans JP", 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", メイリオ, Meiryo, sans-serif;
+  font-size: medium;
+  letter-spacing: 0.05em;
+  word-break: break-all;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+strong {
+  font-weight: bold;
+}
+
+/*和文と英文でfontを分ける
+-----------------------------------------------------------------*/
+/*(和文)*/
+:lang(ja) {
+  font-family: "Noto Sans JP", sans-serif, "Font Awesome 5 Brands";
+}
+
+/*（英文）*/
+:lang(en) {
+  font-family: Roboto, sans-serif;
+}
+
+/*フォントサイズ
+https://websemantics.uk/tools/responsive-font-calculator/
+-------------------------------------------------*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  /* 16px*/
+  color: #3e3e3e;
+}
+
+h1 {
+  font-size: 26px;
+  /* IE8以下とAndroid4.3以下用フォールバック */
+  font-size: 2.6rem;
+  line-height: calc(24 / 36);
+  font-family: Roboto;
+}
+
+h2 {
+  font-size: 36px;
+  /* IE8以下とAndroid4.3以下用フォールバック */
+  font-size: 3.6rem;
+  line-height: calc(24 / 36);
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  /* IE8以下とAndroid4.3以下用フォールバック */
+  font-size: 2rem;
+  line-height: calc(40 / 20);
+}
+
+p {
+  font-size: 14px;
+  /* IE8以下とAndroid4.3以下用フォールバック */
+  font-size: 1.4rem;
+  line-height: calc(30 / 14);
+  letter-spacing: 0.05em;
+}
+
+/*==============================================================================
+Base
+============================================================================== */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  background-color: #fafafa;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  color: #fff;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/* ======================================
+Layout
+====================================== */
+/*============================================================================== header 
+============================================================================== */
+.header {
+  background-color: #1b1310;
+  color: #fff;
+  height: 74px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 120px;
+  border-bottom: 1px solid #fff;
+}
+
+.nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 55px;
+}
+
+/*.burger-btn {
+	display: none;
+}*/
+/* ===========================================================================
+humberger-menu
+================================================================================*/
+.header {
+  padding: 0 5%;
+}
+
+.header .burger-btn {
+  display: block;
+  width: 39px;
+  height: 39px;
+  position: relative;
+  z-index: 3;
+  /*   codepenの挙動のため */
+  background-color: transparent;
+  border: none;
+}
+
+.header .burger-btn .bar {
+  width: 20px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #fff;
+}
+
+.header .burger-btn .bar_top {
+  top: 10px;
+}
+
+.header .burger-btn .bar_mid {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.header .burger-btn .bar_bottom {
+  bottom: 10px;
+}
+
+.burger-btn.close .bar_top {
+  -webkit-transform: translate(-50%, 10px) rotate(45deg);
+          transform: translate(-50%, 10px) rotate(45deg);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.burger-btn.close .bar_mid {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.burger-btn.close .bar_bottom {
+  -webkit-transform: translate(-50%, -8px) rotate(-45deg);
+          transform: translate(-50%, -8px) rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.nav-wrapper {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  /*キービジュアルと.btn_triggerとの重なりの前後関係を調整*/
+}
+
+.header-nav {
+  width: 100%;
+  height: 100%;
+  background-color: #1b1310;
+  z-index: 2;
+}
+
+.header-nav .nav-list {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header-nav .nav-item {
+  margin-right: 0;
+  margin-bottom: 40px;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    padding: 0 120px;
+  }
+  .header h1 {
+    letter-spacing: 0em;
+    line-height: calc(30 / 26);
+    width: 20%;
+  }
+  .header .nav-wrapper {
+    width: 100%;
+    height: 72px;
+    display: block;
+    z-index: inherit;
+    position: inherit;
+  }
+  .header .nav-wrapper .header-nav {
+    z-index: inherit;
+  }
+  .header .nav-wrapper .header-nav .nav-list {
+    position: inherit;
+    text-align: inherit;
+    -webkit-transform: inherit;
+            transform: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    line-height: 74px;
+  }
+  .header .nav-wrapper .header-nav .nav-list .nav-contact_item {
+    margin-right: 5rem;
+    text-align: center;
+  }
+  .header .nav-wrapper .header-nav .nav-list .nav-contact_item:nth-child(4) {
+    margin-right: 0;
+  }
+  .header .burger-btn {
+    z-index: inherit;
+    display: none;
+  }
+}
+
+/*=============================================================================
+first view
+================================================================================*/
+.first_view {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  background: url("img/fv-bgi_sp@2x.jpg") no-repeat;
+  min-width: 320px;
+  max-width: 770px;
+  background-size: cover;
+}
+
+.first_view p {
+  width: 300px;
+  height: 100px;
+  border: #fff 2px solid;
+  color: #fff;
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 3rem;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 100px;
+}
+
+/*=============================================================================
+all
+================================================================================*/
+main {
+  width: calc(100% - 30px);
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.about,
+.service,
+.news,
+.contact {
+  width: 100%;
+  margin-bottom: 15rem;
+}
+
+.about h2,
+.service h2,
+.news h2,
+.contact h2 {
+  margin-bottom: 7.3rem;
+}
+
+.about h3,
+.service h3,
+.news h3,
+.contact h3 {
+  margin-bottom: 3.1rem;
+}
+
+/*=============================================================================
+about
+================================================================================*/
+.about p + p {
+  margin-top: 3rem;
+  background-color: #9da1f7;
+  padding: 2rem;
+}
+
+/*=============================================================================
+service
+================================================================================*/
+.service img {
+  margin: 4rem 0 5.1rem;
+}
+
+/*=============================================================================
+news
+================================================================================*/
+.news .news_card_wrapper .news_card {
+  margin-bottom: 5rem;
+  padding: 3.4rem;
+}
+
+.news .news_card_wrapper .news_card:hover {
+  background-color: #d0cfcf;
+}
+
+.news .news_card_wrapper .news_card .card-content {
+  border: 1px solid #707070;
+  -webkit-box-shadow: 0px 0px 7px 2px #707070;
+          box-shadow: 0px 0px 7px 2px #707070;
+}
+
+.news .news_card_wrapper .news_card .card-content p {
+  padding: 2.6rem 3.4rem;
+  background: #fff;
+}
+
+/*=============================================================================
+contact
+================================================================================*/
+.contact {
+  margin-bottom: 0;
+}
+
+.contact form .contact_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact form .contact_item .label {
+  height: 30px;
+}
+
+.contact form .contact_item .inputs {
+  margin-bottom: 22px;
+  height: 30px;
+}
+
+.contact form .contact_item textarea {
+  width: 100%;
+  height: 195px;
+}
+
+.contact form .btn-area {
+  text-align: center;
+  margin: 5rem 0;
+}
+
+.contact form .btn-area input {
+  width: 235px;
+  height: 59px;
+  border-radius: 30px;
+  background-color: #1b1310;
+  color: #fff;
+}
+
+.contact form .btn-area input:hover {
+  background-color: #c1c3c6b3;
+  color: #333;
+}
+
+@media screen and (min-width: 768px) {
+  /*=============================================================================
+first view
+================================================================================*/
+  .first_view {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    background: url("/img/fv-bgi@2x.jpg") no-repeat center;
+    background-size: cover;
+    max-width: 100%;
+  }
+  /*=============================================================================
+all
+================================================================================*/
+  main {
+    width: 80%;
+  }
+  /*=========================================================*=============================================================================
+contact
+================================================================================*/
+  .contact form .contact_item .label {
+    width: 100%;
+    height: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /*============================================================================
+news
+================================================================================*/
+  .news_card_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .news_card {
+    width: calc(100% / 3 - 20px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /*=============================================================================
+first view
+================================================================================*/
+  .first_view p {
+    width: 449px;
+    height: 136px;
+    font-size: 5rem;
+    line-height: 136px;
+  }
+  /*=============================================================================
+	all
+	============================================================================*/
+  main {
+    width: 1030px;
+  }
+  /*=============================================================================
+service
+================================================================================*/
+  .service_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .service_box:nth-child(2n) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .service_box_item {
+    width: 480px;
+    margin-right: 7rem;
+  }
+  .service_box_item h3 {
+    word-break: keep-all;
+    width: 27rem;
+  }
+  .service_box img {
+    width: 480px;
+    height: 240px;
+    margin-right: 7rem;
+  }
+  /*============================================================================
+news
+================================================================================*/
+  .news:nth-child(3n) {
+    margin-right: 0;
+  }
+  /*============================================================================
+contact
+================================================================================*/
+  .contact {
+    width: 700px;
+    margin: auto;
+  }
+}
+
+footer {
+  background-color: #1b1310;
+  width: 100%;
+  height: 60px;
+}
+
+footer small {
+  color: #fff;
+  text-align: center;
+  margin: auto;
+  display: block;
+  line-height: 60px;
+}
+
+.content_box {
+  background-color: #c1c3c6b3;
+  padding: 5rem;
+  width: 77rem;
+  height: 24rem;
+  margin: 10rem auto;
+  border-radius: 15px;
+}
+
+.content_box p {
+  text-align: center;
+  padding: 5rem;
+}
+
+/* ======================================
+Object
+====================================== */
+/**
+Component
+----------------------------------- */
+/**
+Project
+----------------------------------- */
+/**
+Utility
+----------------------------------- */
+/*# sourceMappingURL=style.css.map */

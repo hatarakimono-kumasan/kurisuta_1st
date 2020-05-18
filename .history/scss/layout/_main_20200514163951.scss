@@ -1,0 +1,16 @@
+/*=======================================
+first view
+=========================================*/
+.first_view {
+	width: 100%;
+	position: relative;
+
+	img {
+		min-width: 100%;
+	}
+	h1 {
+		border: #fff 2px solid;
+		color: #fff;
+		position: absolute;
+	}
+}
